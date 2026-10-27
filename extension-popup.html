@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Моя музыка — доступ к CDN</title>
+<link rel="stylesheet" href="extension-popup.css">
+<main><h1>Моя музыка</h1>
+<p>Откройте свою «Мою музыку» → «Все» на vk.ru. Аккаунт проверяется автоматически. Кнопки скачивания и очередь находятся на странице VK.</p>
+<button id="grant-cdn" type="button">Разрешить согласованные CDN</button>
+<p class="note">vkuseraudio.ru, vkuseraudio.net, userapi.com, vkuser.net, okcdn.ru и mycdn.me, включая поддомены. Доступ нужен для проверки и получения аудио.</p>
+<p id="permission-result" role="status" aria-live="polite">Доступ запрашивается только по нажатию. Скачивание автоматически не запускается.</p>
+<p class="note">Массовая очередь сохраняет файлы в «Моя музыка» внутри папки загрузок Edge. Держите вкладку VK открытой. Не все записи могут быть доступны; полнота обхода не подтверждена.</p>
+</main><script type="module" src="extension-popup.mjs"></script></html>

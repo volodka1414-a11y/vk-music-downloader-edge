@@ -1,0 +1,38 @@
+name: Сообщить об ошибке
+description: Проблема с установкой или работой расширения в Edge
+title: "[Ошибка]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Не прикладывайте пароли, cookies, токены, полные аудиоссылки или дампы хранилища. Удалите личные сведения со скриншотов."
+  - type: input
+    id: extension_version
+    attributes:
+      label: Версия расширения
+      placeholder: "Например, 0.14.1"
+    validations:
+      required: true
+  - type: input
+    id: browser_version
+    attributes:
+      label: Браузер, его версия и Windows
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Что вы делали
+      description: Опишите шаги, после которых возникла проблема.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидали
+  - type: textarea
+    id: actual
+    attributes:
+      label: Что произошло
+      description: Можно приложить скриншот и безопасный код ошибки из отчёта.
+    validations:
+      required: true

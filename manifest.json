@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Моя музыка для VK — Edge",
+  "version": "0.14.1",
+  "description": "Одиночное и последовательное скачивание личной музыки с автопрокруткой и историей ID. Без управления плеером.",
+  "permissions": [
+    "scripting",
+    "downloads",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://vk.ru/*",
+    "https://*.okcdn.ru/*",
+    "https://cs1-76v4.vkuseraudio.ru/*"
+  ],
+  "optional_host_permissions": [
+    "https://*.vkuseraudio.ru/*",
+    "https://*.vkuseraudio.net/*",
+    "https://*.userapi.com/*",
+    "https://*.vkuser.net/*",
+    "https://*.okcdn.ru/*",
+    "https://*.mycdn.me/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.mjs",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Моя музыка — доступ к CDN",
+    "default_popup": "extension-popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://vk.ru/*"
+      ],
+      "js": [
+        "config.js",
+        "library-scope.js",
+        "content.js",
+        "batch-content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
